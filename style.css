@@ -1,37 +1,139 @@
-body {
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
+/* CSS Variables for easy theming */
+:root {
+  --primary-color: #2980b9;
+  --secondary-color: #34495e;
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --muted-color: #7f8c8d;
+  --border-color: #ecf0f1;
+  --font-family: 'Arial', sans-serif;
+}
+
+/* Reset default margins and paddings */
+* {
   margin: 0;
   padding: 0;
-  background-color: #f8f8f8;
-  color: #333;
+  box-sizing: border-box;
 }
 
-.container {
-  max-width: 800px;
-  margin: 2rem auto;
-  background: #fff;
-  padding: 2rem;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+/* Body styling */
+body {
+  font-family: var(--font-family);
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
 }
 
+/* Container for the resume */
+.resume-container {
+  width: 100%;
+  max-width: 900px;
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.resume-container:hover {
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Header styling */
 header {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 20px;
 }
 
-h1 {
-  margin-bottom: 0.2rem;
+header h1 {
+  font-size: 2.5em;
+  color: var(--secondary-color);
+  transition: color 0.3s ease;
 }
 
+header h1:hover {
+  color: var(--primary-color);
+}
+
+header p {
+  font-size: 1.1em;
+  color: var(--muted-color);
+}
+
+/* Section titles */
 h2 {
-  color: #444;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 0.3rem;
-  margin-top: 2rem;
+  font-size: 1.5em;
+  color: var(--secondary-color);
+  margin-top: 20px;
+  border-bottom: 2px solid var(--border-color);
+  padding-bottom: 5px;
+  transition: border-color 0.3s ease;
 }
 
+h2:hover {
+  border-color: var(--primary-color);
+}
+
+/* List styling */
 ul {
-  list-style-type: disc;
-  margin-left: 1.5rem;
+  list-style-type: none;
+  margin-left: 20px;
+}
+
+ul li {
+  margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+/* Custom bullet points */
+ul li::before {
+  content: '•';
+  color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: bold;
+}
+
+/* Experience and Education entries */
+section {
+  margin-bottom: 20px;
+}
+
+section h3 {
+  font-size: 1.2em;
+  color: var(--primary-color);
+  margin-bottom: 5px;
+}
+
+section p {
+  font-size: 1em;
+  color: var(--muted-color);
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 600px) {
+  body {
+    padding: 10px;
+  }
+  
+  .resume-container {
+    padding: 15px;
+  }
+  
+  header h1 {
+    font-size: 2em;
+  }
+  
+  h2 {
+    font-size: 1.3em;
+  }
+  
+  section h3 {
+    font-size: 1.1em;
+  }
 }
